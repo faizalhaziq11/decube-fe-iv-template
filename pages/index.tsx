@@ -1,10 +1,15 @@
+import MovieList from "@/components/MovieList";
 import { Inter } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next/types";
 
 const inter = Inter({ subsets: ["latin"] });
 const cn = (...classes: string[]) => classes.filter(Boolean).join(" ");
 
 export default function Home() {
+
+
   return (
     <main
       className={cn(
@@ -19,6 +24,8 @@ export default function Home() {
         height={400}
       />
       <p>You can start your project here. Good luck!</p>
+      <Link className="text-red-500 hover:text-red-300 transition-colors" href={'/movies'}>Click here to see popular movie list</Link>
     </main>
   );
 }
+
